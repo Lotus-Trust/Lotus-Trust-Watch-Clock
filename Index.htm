@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reloj Patek Digital - Base con Bisel, Botón y Esfera Ajustable</title>
+    <link rel="stylesheet" href="styles.css" />
+
+</head>
+
+<body>
+    <div id="main-container">
+        <!-- NUEVO PANEL IZQUIERDA -->
+        <div id="side-buttons">
+            <button>II</button>
+            <button>III</button>
+            <button>IV</button>
+            <button>V</button>
+            <button>VI</button>
+            <button>VII</button>
+        </div>
+
+        <div id="reloj-container">
+            <div id="container">
+                <div id="app">
+                    <div id="base-circle"></div>
+
+                    <!-- Disco0 fijo debajo de la esfera -->
+                    <object id="disco0" type="image/svg+xml" data="assets/disco0.svg"></object>
+                    <div id="perimetro-circular"></div>
+
+                    <!-- Objeto1 SVG entre disco0 y objeto2 -->
+                    <object id="objeto1" type="image/svg+xml" data="assets/objeto1.svg"></object>
+
+                    <!-- Objeto2 SVG por encima de objeto1, debajo de objeto3 -->
+                    <object id="objeto2" type="image/svg+xml" data="assets/objeto2.svg"></object>
+
+                    <!-- Objeto3 SVG por encima de objeto2, debajo de la máscara -->
+                    <object id="objeto3" type="image/svg+xml" data="assets/objeto3.svg"></object>
+
+                    <!-- Objeto4 SVG por encima de objeto3, debajo de la máscara -->
+                    <object id="objeto4" type="image/svg+xml" data="assets/objeto4.svg"></object>
+
+                    <!-- Objeto5 SVG por encima de objeto4, debajo de la máscara -->
+                    <object id="objeto5" type="image/svg+xml" data="assets/objeto5.svg"></object>
+
+                    <!-- Objeto6 SVG por encima de objeto5, debajo de la máscara -->
+                    <object id="objeto6" type="image/svg+xml" data="assets/objeto6.svg"></object>
+
+                    <!-- Objeto7 SVG por encima de objeto6, debajo de la máscara -->
+                    <object id="objeto7" type="image/svg+xml" data="assets/objeto7.svg"></object>
+
+                    <!-- Objeto9 SVG por encima de objeto7, debajo de objeto8 y máscara -->
+                    <object id="objeto9" type="image/svg+xml" data="assets/objeto9.svg"></object>
+
+                    <!-- NUEVOS OBJETOS DE COLORES -->
+                    <object id="objeto10" type="image/svg+xml" data="assets/objeto10.svg"></object>
+                    <object id="objeto11" type="image/svg+xml" data="assets/objeto11.svg"></object>
+                    <object id="objeto12" type="image/svg+xml" data="assets/objeto12.svg"></object>
+                    <object id="objeto13" type="image/svg+xml" data="assets/objeto13.svg"></object>
+                    <object id="objeto14" type="image/svg+xml" data="assets/objeto14.svg"></object>
+                    <object id="objeto15" type="image/svg+xml" data="assets/objeto15.svg"></object>
+                    <object id="objeto16" type="image/svg+xml" data="assets/objeto16.svg"></object>
+                    <object id="objeto17" type="image/svg+xml" data="assets/objeto17.svg"></object>
+                    <object id="objeto18" type="image/svg+xml" data="assets/objeto18.svg"></object>
+                    <object id="objeto19" type="image/svg+xml" data="assets/objeto19.svg"></object>
+
+                    <!-- Objeto8 SVG por encima de objeto9, debajo de la máscara -->
+                    <object id="objeto8" type="image/svg+xml" data="assets/objeto8.svg"></object>
+
+                    <!-- Máscara prueba fija encima de los objetos -->
+                    <object id="mascaraprueba" type="image/svg+xml" data="assets/discoprueba.svg"></object>
+
+                    <div id="sombra-rectangular"></div>
+                    <div id="sombra-rectangular2"></div>
+                    <div id="sombra-rectangular3"></div>
+
+                    <!-- Esfera SVG rotatoria -->
+                    <object id="esfera" type="image/svg+xml" data="assets/esfera.svg"></object>
+                    <object id="cristal" type="image/svg+xml" data="assets/cristal.svg"></object>
+
+                    <!-- Números dinámicos (por ahora estáticos para posicionar) -->
+                    <div id="perdida-max" class="numero-fijo izquierda">-12%</div>
+                    <div id="retorno" class="numero-fijo derecha">18%</div>
+                    <div id="porcentajeReal" class="valor-numero"></div>
+
+
+
+                    <!-- Manecillas del reloj -->
+                    <img id="manecillaHora" src="assets/hora.svg" alt="Manecilla Hora" draggable="false" />
+                    <img id="manecillaMinuto" src="assets/minuto.svg" alt="Manecilla Minuto" draggable="false" />
+                    <img id="manecillaSegundo" src="assets/segundo.svg" alt="Manecilla Segundo" draggable="false" />
+                    <img id="manecillaAlma" src="assets/alma.svg" alt="Manecilla Alma" draggable="false" />
+
+                    <!-- NUEVOS OBJETOS POR ENCIMA DE alma.svg -->
+                    <object id="discominicentro" type="image/svg+xml" data="assets/discominicentro.svg"></object>
+                    <object id="puntero" type="image/svg+xml" data="assets/puntero.svg"></object>
+
+                    <!-- Bisel caja SVG encima -->
+                    <object id="bisel-caja" type="image/svg+xml" data="assets/bisel_caja.svg"></object>
+
+                    <!-- Botón rotar como imagen -->
+                    <img id="boton-rotar" src="assets/boton.svg" alt="Botón rotar" draggable="false"
+                        aria-label="Botón para rotar la esfera" />
+                </div>
+
+                <!-- Panel de controles para la esfera (oculto) -->
+                <div id="control-panel-esfera" aria-label="Controles para ajustar esfera">
+                    <h3>Ajustar posición esfera</h3>
+                    <label for="offsetXEsfera">Offset X: <span id="offsetXValueEsfera">0</span> px</label>
+                    <input type="range" id="offsetXEsfera" min="-300" max="300" value="0" step="1" />
+
+                    <label for="offsetYEsfera">Offset Y: <span id="offsetYValueEsfera">0</span> px</label>
+                    <input type="range" id="offsetYEsfera" min="-100" max="100" value="0" step="1" />
+
+                    <div id="posAbsoluteEsfera">Coordenadas absolutas: (0, 0)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel lateral con controles para los 8 objetos + objeto 10 -->
+        <div id="control-panel-objects" aria-label="Controles para ajustar objetos"
+            style="overflow-y: auto; max-height: 600px;">
+            <h3>Controles Objetos (1-8 + 10)</h3>
+
+            <!-- Controles para cada objeto -->
+            <div class="object-control" id="control-obj-1">
+                <h4>Objeto 1</h4>
+                <label for="offsetXObj1">Offset X: <span id="offsetXValueObj1">0</span> px</label>
+                <input type="range" id="offsetXObj1" min="-300" max="300" value="0" step="1" />
+                <label for="offsetYObj1">Offset Y: <span id="offsetYValueObj1">0</span> px</label>
+                <input type="range" id="offsetYObj1" min="-100" max="100" value="0" step="1" />
+                <div class="posAbsolute" id="posAbsoluteObj1">Coordenadas absolutas: (0, 0)</div>
+            </div>
+
+            <div class="object-control" id="control-obj-2">
+                <h4>Objeto 2</h4>
+                <label for="offsetXObj2">Offset X: <span id="offsetXValueObj2">0</span> px</label>
+                <input type="range" id="offsetXObj2" min="-300" max="300" value="0" step="1" />
+                <label for="offsetYObj2">Offset Y: <span id="offsetYValueObj2">0</span> px</label>
+                <input type="range" id="offsetYObj2" min="-100" max="100" value="0" step="1" />
+                <div class="posAbsolute" id="posAbsoluteObj2">Coordenadas absolutas: (0, 0)</div>
+            </div>
+
+            <div class="object-control" id="control-obj-3">
+                <h4>Objeto 3</h4>
+                <label for="offsetXObj3">Offset X: <span id="offsetXValueObj3">0</span> px</label>
+                <input type="range" id="offsetXObj3" min="-300" max="300" value="0" step="1" />
+                <label for="offsetYObj3">Offset Y: <span id="offsetYValueObj3">0</span> px</label>
+                <input type="range" id="offsetYObj3" min="-100" max="100" value="0" step="1" />
+                <div class="posAbsolute" id="posAbsoluteObj3">Coordenadas absolutas: (0, 0)</div>
+            </div>
+
+            <div class="object-control" id="control-obj-4">
+                <h4>Objeto 4</h4>
+                <label for="offsetXObj4">Offset X: <span id="offsetXValueObj4">0</span> px</label>
+                <input type="range" id="offsetXObj4" min="-300" max="300" value="0" step="1" />
+                <label for="offsetYObj4">Offset Y: <span id="offsetYValueObj4">0</span> px</label>
+                <input type="range" id="offsetYObj4" min="-100" max="100" value="0" step="1" />
+                <div class="posAbsolute" id="posAbsoluteObj4">Coordenadas absolutas: (0, 0)</div>
+            </div>
+
+            <div class="object-control" id="control-obj-5">
+                <h4>Objeto 5</h4>
+                <label for="offsetXObj5">Offset X: <span id="offsetXValueObj5">0</span> px</label>
+                <input type="range" id="offsetXObj5" min="-300" max="300" value="0" step="1" />
+                <label for="offsetYObj5">Offset Y: <span id="offsetYValueObj5">0</span> px</label>
+                <input type="range" id="offsetYObj5" min="-100" max="100" value="0" step="1" />
+                <div class="posAbsolute" id="posAbsoluteObj5">Coordenadas absolutas: (0, 0)</div>
+            </div>
+
+            <div class="object-control" id="control-obj-6">
+                <h4>Objeto 6</h4>
+                <label for="offsetXObj6">Offset X: <span id="offsetXValueObj6">0</span> px</label>
+                <input type="range" id="offsetXObj6" min="-300" max="300" value="0" step="1" />
+                <label for="offsetYObj6">Offset Y: <span id="offsetYValueObj6">0</span> px</label>
+                <input type="range" id="offsetYObj6" min="-100" max="100" value="0" step="1" />
+                <div class="posAbsolute" id="posAbsoluteObj6">Coordenadas absolutas: (0, 0)</div>
+            </div>
+
+            <div class="object-control" id="control-obj-7">
+                <h4>Objeto 7</h4>
+                <label for="offsetXObj7">Offset X: <span id="offsetXValueObj7">0</span> px</label>
+                <input type="range" id="offsetXObj7" min="-300" max="300" value="0" step="1" />
+                <label for="offsetYObj7">Offset Y: <span id="offsetYValueObj7">0</span> px</label>
+                <input type="range" id="offsetYObj7" min="-100" max="100" value="0" step="1" />
+                <div class="posAbsolute" id="posAbsoluteObj7">Coordenadas absolutas: (0, 0)</div>
+            </div>
+
+            <div class="object-control" id="control-obj-8">
+                <h4>Objeto 8</h4>
+                <label for="offsetXObj8">Offset X: <span id="offsetXValueObj8">0</span> px</label>
+                <input type="range" id="offsetXObj8" min="-300" max="300" value="0" step="1" />
+                <label for="offsetYObj8">Offset Y: <span id="offsetYValueObj8">0</span> px</label>
+                <input type="range" id="offsetYObj8" min="-100" max="100" value="0" step="1" />
+                <div class="posAbsolute" id="posAbsoluteObj8">Coordenadas absolutas: (0, 0)</div>
+            </div>
+
+            <div class="object-control" id="control-obj-10">
+                <h4>Objeto 10</h4>
+                <label for="offsetXObj10">Offset X: <span id="offsetXValueObj10">0</span> px</label>
+                <input type="range" id="offsetXObj10" min="-300" max="300" value="0" step="1" />
+                <label for="offsetYObj10">Offset Y: <span id="offsetYValueObj10">0</span> px</label>
+                <input type="range" id="offsetYObj10" min="-100" max="100" value="0" step="1" />
+                <div class="posAbsolute" id="posAbsoluteObj10">Coordenadas absolutas: (0, 0)</div>
+            </div>
+
+            <!-- NUEVOS CONTROLES PARA DISCO MINI CENTRO Y PUNTERO -->
+            <h3 style="margin-top: 30px;">Controles Nuevos Objetos</h3>
+
+            <div class="object-control" id="control-discominicentro">
+                <h4>Disco Mini Centro</h4>
+                <label for="offsetXDiscoMiniCentro">Offset X: <span id="offsetXValueDiscoMiniCentro">0</span> px</label>
+                <input type="range" id="offsetXDiscoMiniCentro" min="-300" max="300" value="0" step="1" />
+                <label for="offsetYDiscoMiniCentro">Offset Y: <span id="offsetYValueDiscoMiniCentro">0</span> px</label>
+                <input type="range" id="offsetYDiscoMiniCentro" min="-300" max="300" value="0" step="1" />
+                <div class="posAbsolute" id="posAbsoluteDiscoMiniCentro">Coordenadas absolutas: (0, 0)</div>
+            </div>
+
+            <div class="object-control" id="control-puntero">
+                <h4>Puntero</h4>
+                <label for="offsetXPuntero">Offset X: <span id="offsetXValuePuntero">0</span> px</label>
+                <input type="range" id="offsetXPuntero" min="-300" max="300" value="0" step="1" />
+                <label for="offsetYPuntero">Offset Y: <span id="offsetYValuePuntero">0</span> px</label>
+                <input type="range" id="offsetYPuntero" min="-300" max="300" value="0" step="1" />
+                <div class="posAbsolute" id="posAbsolutePuntero">Coordenadas absolutas: (0, 0)</div>
+            </div>
+
+            <!-- NUEVOS CONTROLES PARA LAS MANECILLAS -->
+            <h3 style="margin-top: 30px;">Controles Manecillas</h3>
+
+            <div class="object-control" id="control-manecilla-hora">
+                <h4>Manecilla Hora</h4>
+                <label for="offsetXHora">Offset X: <span id="offsetXValueHora">0</span> px</label>
+                <input type="range" id="offsetXHora" min="-300" max="300" value="0" step="1" />
+                <label for="offsetYHora">Offset Y: <span id="offsetYValueHora">0</span> px</label>
+                <input type="range" id="offsetYHora" min="-100" max="100" value="0" step="1" />
+                <div class="posAbsolute" id="posAbsoluteHora">Coordenadas absolutas: (0, 0)</div>
+            </div>
+
+            <div class="object-control" id="control-manecilla-minuto">
+                <h4>Manecilla Minuto</h4>
+                <label for="offsetXMinuto">Offset X: <span id="offsetXValueMinuto">0</span> px</label>
+                <input type="range" id="offsetXMinuto" min="-300" max="300" value="0" step="1" />
+                <label for="offsetYMinuto">Offset Y: <span id="offsetYValueMinuto">0</span> px</label>
+                <input type="range" id="offsetYMinuto" min="-100" max="100" value="0" step="1" />
+                <div class="posAbsolute" id="posAbsoluteMinuto">Coordenadas absolutas: (0, 0)</div>
+            </div>
+
+            <div class="object-control" id="control-manecilla-segundo">
+                <h4>Manecilla Segundo</h4>
+                <label for="offsetXSegundo">Offset X: <span id="offsetXValueSegundo">0</span> px</label>
+                <input type="range" id="offsetXSegundo" min="-300" max="300" value="0" step="1" />
+                <label for="offsetYSegundo">Offset Y: <span id="offsetYValueSegundo">0</span> px</label>
+                <input type="range" id="offsetYSegundo" min="-100" max="100" value="0" step="1" />
+                <div class="posAbsolute" id="posAbsoluteSegundo">Coordenadas absolutas: (0, 0)</div>
+            </div>
+
+            <div class="object-control" id="control-manecilla-alma">
+                <h4>Manecilla Alma</h4>
+                <label for="offsetXAlma">Offset X: <span id="offsetXValueAlma">0</span> px</label>
+                <input type="range" id="offsetXAlma" min="-300" max="300" value="0" step="1" />
+                <label for="offsetYAlma">Offset Y: <span id="offsetYValueAlma">0</span> px</label>
+                <input type="range" id="offsetYAlma" min="-100" max="100" value="0" step="1" />
+                <div class="posAbsolute" id="posAbsoluteAlma">Coordenadas absolutas: (0, 0)</div>
+            </div>
+        </div>
+    </div>
+
+<div id="cuadro-inversion">
+    <div class="fila">
+        <div class="fila titulo resumen">Summary / Resumen</div>
+        <input id="resumen" type="text" readonly value="">
+        <label for="gestionadoPor">Managed by / Gestionado por:</label>
+        <input id="gestionadoPor" type="text" readonly value="">
+        <label for="expReturn">Exp. Return / Retorno Objetivo:</label>
+        <input id="expReturn" type="text" readonly value="">
+        <label for="maxLoss">Max exp. Loss / Máx Pérdida:</label>
+        <input id="maxLoss" class="espaciado-inferior" type="text" readonly value="">
+    </div>
+
+    <div class="espaciador"></div>
+
+    <div class="fila titulo">Investment Period</div>
+
+    <div class="fila">
+        <input id="blank1" type="text" readonly value="">
+        <label for="fechaDesde">From / Desde el:</label>
+        <input id="fechaDesde" type="date" readonly value="">
+        <label for="fechaHasta">To / Hasta el:</label>
+        <input id="fechaHasta" type="date" readonly value="">
+    </div>
+
+    <div class="espaciador"></div>
+
+    <div class="fila titulo">Subscription Window</div>
+
+    <div class="fila">
+        <label for="estadoSubscripcion">Status:</label>
+        <input id="estadoSubscripcion" type="text" readonly value="">
+        <label for="desdeSubscripcion">From / Desde el:</label>
+        <input id="desdeSubscripcion" type="date" readonly value="">
+        <label for="hastaSubscripcion">To / Hasta el:</label>
+        <input id="hastaSubscripcion" type="date" readonly value="">
+        <label for="fundID">Fund ID:</label>
+        <input id="fundID" type="text" readonly value="">
+    </div>
+ </div>
+
+ <!-- NUEVOS BOTONES -->
+ <div id="botonesExtra">
+    <button class="btn-lujo" id="btnInfo" disabled>Login</button>
+    <button class="btn-lujo" id="btnLogin" disabled>+ Info</button>
+ </div>
+ </div>
+
+
+
+    <script src="patek.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 406.15 413.33">
+  <defs>
+    <style>
+      .cls-1{font-size:60.52px;}
+      .cls-1,.cls-2,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7{font-family:Calibri, Calibri;}
+      .cls-8{letter-spacing:0em;}
+      .cls-2{font-size:60.01px;}
+      .cls-3{font-size:59.76px;}
+      .cls-4{font-size:60.35px;}
+      .cls-9{fill:#f2f2f2;}
+      .cls-5{font-size:60.13px;}
+      .cls-10{letter-spacing:-.08em;}
+      .cls-6{font-size:60.43px;}
+      .cls-7{font-size:59.82px;}
+    </style>
+  </defs>
+
+  <g id="rotatableDias2">
+    <circle class="cls-9" cx="203.06" cy="208.22" r="200"/>
+    <path class="cls-9" d="M84.67,93.19c62.71-66.79,166.98-69.42,232.9-5.89,65.92,63.53,68.53,169.17,5.82,235.96-62.71,66.79-166.98,69.42-232.9,5.89-65.92-63.53-68.53-169.17-5.82-235.96Z"/>
+    <text class="cls-5" transform="translate(75.52 125.33) rotate(-47.18) scale(.65 1) skewX(-1.15)"><tspan x="0" y="0">MO</tspan></text>
+    <text class="cls-1" transform="translate(186.41 54.29) rotate(5.29) scale(.64 1) skewX(.16)"><tspan x="0" y="0">TUE</tspan></text>
+    <text class="cls-2" transform="translate(314.77 102.38) rotate(57.44) scale(.65 1) skewX(1.1)"><tspan x="0" y="0">WE</tspan></text>
+    <text class="cls-7" transform="translate(356.78 222.2) rotate(107.45) scale(.66 1) skewX(-.68)"><tspan x="0" y="0">THU</tspan></text>
+    <text class="cls-6" transform="translate(279.49 341.44) rotate(158.91) scale(.64 1) skewX(-.75)"><tspan x="0" y="0">FRI</tspan></text>
+    <text class="cls-4" transform="translate(150.69 352.96) rotate(-148.25) scale(.64 1) skewX(.97)">
+      <tspan class="cls-8" x="0" y="0">S</tspan>
+      <tspan class="cls-10" x="27.29" y="0">A</tspan>
+      <tspan x="57.49" y="0">T</tspan>
+    </text>
+    <text class="cls-3" transform="translate(60.05 262.37) rotate(-97.37) scale(.66 1) skewX(.35)"><tspan x="0" y="0">SUN</tspan></text>
+  </g>
+</svg>
+
+
+

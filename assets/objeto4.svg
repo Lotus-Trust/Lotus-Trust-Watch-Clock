@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 396.16 398.04">
+  <defs>
+    <style>
+      .cls-1 { opacity: .85; }
+      .cls-2 { fill: #f2f2f2; }
+      .cls-3 { fill: #283740; font-family: ARJULIAN, 'AR JULIAN'; font-size: 50px; }
+    </style>
+  </defs>
+
+  <ellipse class="cls-2" cx="198.08" cy="199.02" rx="193.81" ry="196.35" transform="translate(-79.33 242.46) rotate(-54.04)" />
+  <ellipse class="cls-2" cx="198.08" cy="199.02" rx="164.74" ry="166.9" transform="translate(-79.33 242.46) rotate(-54.04)" />
+
+  <g id="rotatableRomanos">  <!-- Grupo contenedor para rotación -->
+    <g class="cls-1"><text class="cls-3" transform="translate(114.55 322.8) rotate(-144.04) scale(.65 1)"><tspan x="0" y="0">I</tspan></text></g>
+    <g class="cls-1"><text class="cls-3" transform="translate(51.26 161.7) rotate(-72.36) scale(.65 1)"><tspan x="0" y="0">II</tspan></text></g>
+    <g class="cls-1"><text class="cls-3" transform="translate(182.06 48.91) rotate(.44) scale(.65 1)"><tspan x="0" y="0">III</tspan></text></g>
+    <g class="cls-1"><text class="cls-3" transform="translate(335.81 137.97) rotate(71.49) scale(.65 1)"><tspan x="0" y="0">IV</tspan></text></g>
+    <g class="cls-1"><text class="cls-3" transform="translate(296.29 314.67) rotate(144.29) scale(.65 1)"><tspan x="0" y="0">V</tspan></text></g>
+  </g>
+</svg>

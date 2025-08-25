@@ -1,0 +1,807 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal que contiene reloj y panel de controles */
+#main-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* cambio para centrar verticalmente */
+    gap: 15px;
+    padding: 10px;
+    height: 100vh;
+    /* para que tome toda la altura de la ventana */
+}
+
+/* Contenedor del reloj */
+#container {
+    width: 360px;
+    height: 360px;
+    position: relative;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 50%;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Base circular blanca (esfera) más pequeña para dejar espacio al bisel */
+#base-circle {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: calc(100% - 80px);
+    height: calc(100% - 80px);
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 15px 3px #00aaff;
+    z-index: 1;
+}
+
+/* Esfera (disco externo que gira con Funds) */
+#esfera {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    transform-origin: center center;
+    transform: translate(-50%, -50%) rotate(0deg);
+    z-index: 15;
+    pointer-events: none;
+}
+
+/* Disco0 SVG (base fija centrada por encima de esfera) */
+#disco0 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 215px;
+    height: 215px;
+    transform: translate(-50%, -50%);
+    z-index: 16;
+    pointer-events: none;
+}
+
+/* Objeto1 SVG entre disco0 y objeto2 */
+#objeto1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 190px;
+    height: 190px;
+    transform: translate(-50%, -50%);
+    z-index: 17;
+    pointer-events: none;
+
+}
+
+/* Objeto2 SVG, más pequeño que objeto1, encima de objeto1, debajo de mascaraprueba */
+#objeto2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90px;
+    height: 90px;
+    transform: translate(-50%, -50%);
+    z-index: 18;
+    pointer-events: none;
+
+}
+
+/* Objeto3 SVG, más pequeño que objeto2, encima de objeto2, debajo de mascaraprueba */
+#objeto3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90px;
+    height: 90px;
+    transform: translate(-50%, -50%);
+    z-index: 19;
+    pointer-events: none;
+
+}
+
+/* Objeto4 SVG, más pequeño que objeto2, encima de objeto3, debajo de mascaraprueba */
+#objeto4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90px;
+    height: 90px;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    pointer-events: none;
+}
+
+/* Objeto5 SVG, tamaño similar a objeto4, encima de objeto4, debajo de mascaraprueba */
+#objeto5 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 63px;
+    height: 63px;
+    transform: translate(-50%, -50%);
+    z-index: 21;
+    pointer-events: none;
+}
+
+/* Objeto6 SVG, tamaño similar a objeto5, encima de objeto5, debajo de mascaraprueba */
+#objeto6 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 66.9px;
+    height: 66.9px;
+    transform: translate(-50%, -50%);
+    z-index: 22;
+    pointer-events: none;
+    filter: drop-shadow(0 0 5px #9faebb) drop-shadow(0 0 1.5px #9faebb);
+    transition: filter 0.3s ease-in-out;
+}
+
+/* Objeto7 SVG, encima de objeto6, debajo de mascaraprueba */
+#objeto7 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 65px;
+    height: 65px;
+    transform: translate(-50%, -50%);
+    z-index: 23;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Objeto9 SVG, igual tamaño que objeto7, inicialmente oculto */
+#objeto9 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 65px;
+    height: 65px;
+    transform: translate(-50%, -50%);
+    z-index: 23;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Objeto10 a Objeto19 - todos ocultos por defecto */
+#objeto10,
+#objeto11,
+#objeto12,
+#objeto13,
+#objeto14,
+#objeto15,
+#objeto16,
+#objeto17,
+#objeto18,
+#objeto19 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 65px;
+    height: 65px;
+    transform: translate(-50%, -50%);
+    z-index: 23;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Objeto8 SVG - muy pequeño, por encima de 7-9-10..., debajo de máscara */
+#objeto8 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%);
+    z-index: 24;
+    pointer-events: none;
+    display: none;
+}
+
+/* MascaraPrueba SVG (máscara fija, sobre objetos) */
+#mascaraprueba {
+    position: absolute;
+    top: 49%;
+    left: 48.5%;
+    width: 211.5px;
+    height: 211.5px;
+    transform: translate(-50%, -50%);
+    z-index: 25;
+    pointer-events: none;
+
+
+}
+
+/* Bisel caja SVG encima, ocupa todo el contenedor */
+#bisel-caja {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    z-index: 10;
+    pointer-events: none;
+    filter: drop-shadow(0 0 6px #00aaff);
+}
+
+/* Animación de flotación suave para el botón */
+@keyframes flotacion {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) translateY(0);
+        filter: drop-shadow(0 0 5px #00aaff) drop-shadow(0 0 10px rgba(0, 170, 255, 0.7));
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(-10px);
+        filter: drop-shadow(0 0 8px #00cfff) drop-shadow(0 0 14px rgba(0, 200, 255, 0.9));
+    }
+}
+
+/* Botón rotatorio SVG */
+#boton-rotar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 21;
+    user-select: none;
+    filter: drop-shadow(0 0 5px #00aaff) drop-shadow(0 0 10px rgba(0, 170, 255, 0.7)) !important;
+    animation: flotacion 2s ease-in-out infinite;
+}
+
+/* Panel de controles para la esfera (oculto) */
+#control-panel-esfera {
+    display: none;
+}
+
+/* Panel lateral para los controles de los objetos */
+#control-panel-objects {
+    width: 280px;
+    max-height: 300px;
+    overflow-y: auto;
+    background: #222;
+    color: #0af;
+    font-size: 14px;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 0 12px #0af;
+    user-select: none;
+    font-family: Arial, sans-serif;
+    display: none;
+}
+
+/* Cada bloque individual de control de objeto */
+.object-control {
+    border: 1px solid #0af;
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+}
+
+/* Titulos h4 para objetos */
+.object-control h4 {
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Labels y sliders */
+.object-control label {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.object-control input[type="range"] {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+/* Mostrar coordenadas absolutas */
+.posAbsolute {
+    color: #0af;
+    font-weight: bold;
+    text-align: center;
+    user-select: none;
+    font-size: 14px;
+}
+
+/* Panel de botones verticales */
+#side-buttons {
+    display: flex;
+    overflow-y: auto;
+    /* aparece scroll solo si se necesita */
+    overflow-x: hidden;
+    /* evita scroll horizontal */
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background: linear-gradient(145deg, #d4d4d4, #b0b0b0);
+    /* plata satinada */
+    border-radius: 5px;
+
+    filter: drop-shadow(0 0 6px #00aaff);
+    border: 0.1px solid black;
+    backdrop-filter: blur(6px);
+    /* Flotación animada */
+    animation: flotar 10s ease-in-out infinite;
+}
+
+#side-buttons button {
+    background: linear-gradient(145deg, #f2f2f2, #c0c0c0);
+    /* gradiente metálico */
+    border: 1px solid #aaa;
+    border-radius: 7px;
+    padding: 12px 18px;
+    color: #333;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-shadow: 0 1px 1px #fff;
+    box-shadow:
+        inset 0 0 4px #ffffffcc,
+        0 0 8px rgba(0, 0, 0, 0.1),
+        0 2px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#side-buttons button:hover {
+    background: linear-gradient(145deg, #ffffff, #c8c8c8);
+    /* más reflejo */
+    color: #000;
+    transform: translateY(-1px);
+    box-shadow:
+        0 0 5px #00aaff,
+        0 0px 5px #00aaff;
+}
+
+#side-buttons button:active {
+    transform: scale(0.97);
+    box-shadow: inset 0 0 10px #ccc;
+}
+
+#side-buttons {
+    width: 70px;
+    /* 👈 ancho total del panel */
+    max-height: 80vh;
+    /* 👈 opcional, alto máximo relativo a la ventana */
+    padding: 16px;
+    /* 👈 espacio interno del panel */
+    gap: 12px;
+    /* 👈 separación entre botones */
+}
+
+#side-buttons button {
+    width: 30%;
+    /* 👈 se adapta al ancho del panel */
+    padding: 12px 18px;
+    /* 👈 alto (vertical) y ancho (horizontal) del botón */
+    font-size: 9px;
+    /* 👈 tamaño del texto */
+    line-height: 1.2;
+    /* 👈 separación entre líneas si es multilinea */
+    display: flex;
+    /* 👈 activa el modelo flex */
+    align-items: center;
+    /* 👈 centra verticalmente */
+    justify-content: center;
+    /* 👈 centra horizontalmente */
+    text-align: center;
+    /* 👈 centra el texto si hay varias líneas */
+    /* ...tu estilo actual... */
+
+}
+
+/* Manecillas del reloj */
+#manecillaHora,
+#manecillaMinuto,
+#manecillaSegundo,
+#manecillaAlma {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+    /* base inferior para rotar */
+    pointer-events: none;
+    user-select: none;
+    /* Solo centrar horizontalmente */
+    transform: translateX(-50%) rotate(0deg);
+}
+
+#manecillaHora {
+    width: 12px;
+    height: 63px;
+    z-index: 25;
+}
+
+#manecillaMinuto {
+    width: 12px;
+    height: 90px;
+    z-index: 26;
+}
+
+#manecillaSegundo {
+    width: 20px;
+    height: 105px;
+    z-index: 27;
+}
+
+#manecillaAlma {
+    width: 50px;
+    height: 50px;
+    z-index: 28;
+}
+
+/* Disco Mini Centro - encima de alma */
+#discominicentro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    /* Ajusta tamaño si quieres */
+    height: 10px;
+    /* Ajusta tamaño si quieres */
+    transform: translate(-50%, -50%);
+    z-index: 29;
+    pointer-events: none;
+
+}
+
+/* Puntero - encima de discominicentro */
+#puntero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    /* Ajusta tamaño según necesidad */
+    height: 8px;
+    transform: translate(-50%, -50%);
+    z-index: 30;
+    pointer-events: none;
+}
+
+#sombra-rectangular {
+    position: absolute;
+    top: 172px;
+    /* Ajustá la posición */
+    left: 244px;
+    width: 19px;
+    height: 12.5px;
+    box-shadow: inset 0 0 5px rgba(132, 126, 126, .7);
+    /* Sombra suave */
+    background: transparent;
+    pointer-events: none;
+    z-index: 25;
+    /* Asegurate que esté encima del SVG */
+}
+
+#sombra-rectangular2 {
+    position: absolute;
+    top: 173px;
+    /* Ajustá la posición */
+    left: 90px;
+    width: 19px;
+    height: 12.0px;
+    box-shadow: inset 0 0 5px rgba(132, 126, 126, .7);
+    /* Sombra suave */
+    background: transparent;
+    pointer-events: none;
+    z-index: 25;
+    /* Asegurate que esté encima del SVG */
+}
+
+#sombra-rectangular3 {
+    position: absolute;
+    top: 182.5px;
+    /* Ajustá la posición */
+    left: 138px;
+    width: 19px;
+    height: 11.5px;
+    box-shadow: inset 0 0 5px rgba(132, 126, 126, .7);
+    /* Sombra suave */
+    background: transparent;
+    pointer-events: none;
+    z-index: 25;
+    /* Asegurate que esté encima del SVG */
+}
+
+#cristal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 211.5px;
+    height: 211.5px;
+    pointer-events: none;
+    /* para no interferir con clicks */
+    user-select: none;
+    z-index: 9999;
+    /* muy alto para que quede encima de todo */
+
+}
+
+/* Fondo general del body */
+body {
+    background: #ffffff;
+    font-family: "Calibri", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* Centra horizontal */
+    align-items: center;
+    /* Centra vertical */
+}
+
+/* Animación de flotación */
+@keyframes flotar {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Contenedor principal */
+#cuadro-inversion {
+    background: #f2f2f2;
+    width: 180px;
+    max-height: 165px;
+    border-radius: 4px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    padding: 12px 12px;
+    overflow: auto;
+    box-sizing: border-box;
+    color: #333;
+    border: 0.3px solid #004d40;
+    font-family: Calibri, sans-serif;
+
+    /* Flotación animada */
+    animation: flotar 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 1px var(--shadow-color, #00aaff)) drop-shadow(0 0 3.5px var(--shadow-color, #00aaff));
+}
+
+/* Cada fila usa flex para alinear etiquetas y inputs */
+.fila {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 5px;
+    align-items: center;
+}
+
+/* Etiquetas */
+.fila label {
+    flex: 1 0 120px;
+    font-weight: normal;
+    font-size: 10px;
+    color: #283740;
+    margin-bottom: -5px;
+}
+
+/* Inputs */
+.fila input {
+    flex: 1 0 150px;
+    padding: 3px 8px;
+    font-size: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #000;
+    font-family: Calibri, sans-serif;
+}
+
+/* Título estilo h2, centrado y sin borde inferior */
+.fila.titulo {
+    font-weight: 600;
+    font-size: 12px;
+    color: #283740;
+    margin-bottom: 3px;
+    text-align: center;
+    width: 100%;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Inputs readonly */
+input[readonly] {
+    background-color: #e9e9e9;
+    color: #555;
+    cursor: default;
+
+}
+
+.espaciador {
+    height: 10px;
+    /* O el valor que necesites */
+}
+
+.fila.titulo.resumen {
+    font-size: 14px;
+}
+
+/* Estilo base */
+.numero-fijo {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 8.2px;
+    font-weight: 600;
+    pointer-events: none;
+    z-index: 25;
+    white-space: nowrap;
+    ;
+    /* sombra sutil */
+}
+
+/* Perdida Max - izquierda */
+#perdida-max {
+    color: #ed1c24;
+    /* o el que prefieras */
+}
+
+/* Retorno Esperado - derecha */
+#retorno {
+    color: #39b54a;
+    /* o el que prefieras */
+}
+
+.numero-fijo.izquierda {
+    left: 30px;
+    /* Ajusta según el tamaño del reloj */
+}
+
+.numero-fijo.derecha {
+    right: 30px;
+    /* Ajusta según el tamaño del reloj */
+}
+
+#porcentajeReal {
+    position: absolute;
+    top: 50%;
+    /* Centrado vertical */
+    left: 50%;
+    /* Centrado horizontal */
+    transform: translate(-50%, -50%);
+    font-size: 6.6px;
+    /* Tamaño del número */
+    font-weight: 600;
+    color: #000;
+    /* color base por defecto, negro */
+    background-color: transparent;
+    /* Fondo transparente */
+    padding: 10px 20px;
+    border-radius: 10px;
+    pointer-events: none;
+    /* Para que no interfiera con clics */
+    font-family: 'Segoe UI', sans-serif;
+    z-index: 25;
+    /* Asegura visibilidad */
+    text-align: center;
+}
+
+/* Color verde para valores positivos o cero */
+#porcentajeReal.positivo {
+    color: #39b54a;
+    /* verde brillante */
+}
+
+/* Color rojo para valores negativos */
+#porcentajeReal.negativo {
+    color: #ed1c24;
+    /* rojo intenso */
+}
+
+/* Contenedor de botones extra debajo del cuadro de inversión */
+#botonesExtra {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* separación vertical entre botones */
+    margin-top: 20px;
+    /* espacio debajo del cuadro de inversión */
+    align-items: center;
+    /* centrados horizontalmente */
+}
+
+/* Animación de flotación suave */
+@keyframes flotar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Estilo base de lujo replicando #side-buttons button */
+.btn-lujo {
+    background: linear-gradient(145deg, #f2f2f2, #c0c0c0);
+    border: 1px solid #aaa;
+    border-radius: 7px;
+    padding: 9px 18px;
+    color: #333;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-shadow: 0 1px 1px #fff;
+        box-shadow:
+                inset 0 0 4px #ffffffcc,
+                0 0 12px rgba(0, 170, 255, 0.4),
+                /* sombra externa azul antes del hover */
+                0 6px 6px rgba(0, 0, 0, 0.2);
+    box-shadow:
+        inset 0 0 4px #ffffffcc,
+        0 0 8px rgba(0, 0, 0, 0.1),
+        0 2 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 75px;
+    /* ancho fijo del botón */
+    font-size: 13px;
+    text-align: center;
+
+    animation: flotar 3s ease-in-out infinite;
+    /* flotación continua */
+}
+
+/* Hover y click igual que panel lateral */
+.btn-lujo:hover {
+    background: linear-gradient(145deg, #ffffff, #c8c8c8);
+    color: #000;
+    transform: translateY(-1px);
+    box-shadow: 0 0 5px #00aaff, 0 0 5px #00aaff;
+}
+
+.btn-lujo:active {
+    transform: scale(0.97);
+    box-shadow: inset 0 0 10px #ccc;
+}
+
+
+
+
+
+
+
+

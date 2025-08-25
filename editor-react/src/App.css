@@ -1,0 +1,169 @@
+/* src/App.css */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f8fa;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form div {
+  margin-bottom: 12px;
+}
+
+label {
+  font-weight: 600;
+  color: #555;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+  outline: none;
+  border-color: #3f51b5;
+  box-shadow: 0 0 5px #3f51b5;
+}
+
+button {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2c3a9b;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 6px #2c3a9b;
+}
+
+div>div>button {
+  background: #eee;
+  color: #333;
+  margin: 10px 8px 10px 0;
+  padding: 8px 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-weight: 600;
+}
+
+div>div>button:hover {
+  background: #ddd;
+}
+
+.editor-container {
+  max-width: 600px;
+  max-height: 40vh;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.editor-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  text-align: center;
+  color: #333;
+}
+
+/* Toggle React / Angular */
+.toggle-group {
+  display: inline-flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.toggle-group input[type="radio"] {
+  display: none;
+  /* ocultamos los radios originales */
+}
+
+.toggle-group label {
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 6px;
+  background-color: #ddd;
+  color: #333;
+  font-weight: 600;
+  user-select: none;
+  transition: background-color 0.25s, color 0.25s;
+  border: 2px solid transparent;
+}
+
+.toggle-group input[type="radio"]:checked+label {
+  background-color: #3f51b5;
+  color: white;
+  border-color: #2c3a9b;
+}
+
+/* Añadido para mejorar el formulario */
+form>div {
+  margin-bottom: 14px;
+}
+
+/* Para separar secciones tipo "Periodo de Inversión" o "Ventana de Subscripción" */
+form>h2 {
+  margin-top: 16px;
+  /* espacio arriba del título */
+  margin-bottom: 6px;
+  /* espacio justo debajo del título */
+  font-size: 1.2rem;
+      /* tamaño de letra personalizado */
+  font-weight: 700;
+      /* para que mantengan negrita */
+}
+
+form>h2+div {
+  margin-top: 4px;
+  /* espacio mínimo entre título y primer input */
+}
+
+/* Ajustes para inputs con label agrupados */
+form>div>label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Estilo para input de texto "extra" en periodo de inversión (solo lectura) */
+form>div input[readonly] {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+  color: #666;
+}
+
+

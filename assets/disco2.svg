@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390.37 402.05">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 60.46px;
+        font-family: Calibri, Calibri;
+        font-weight: 300; /* peso más ligero */
+        stroke: none;
+        paint-order: fill;
+      }
+      .cls-2 {
+        font-size: 59.76px;
+        font-family: Calibri, Calibri;
+      }
+      .cls-3 {
+        font-size: 60.11px;
+        font-family: Calibri, Calibri;
+      }
+      .cls-4 {
+        font-size: 60.36px;
+        font-family: Calibri, Calibri;
+      }
+      .cls-5 {
+        font-size: 59.98px;
+        font-family: Calibri, Calibri;
+      }
+      .cls-6 {
+        font-size: 59.69px;
+        font-family: Calibri, Calibri;
+      }
+      .cls-7 {
+        font-size: 60.56px;
+        font-family: Calibri, Calibri;
+      }
+      .cls-8 {
+        letter-spacing: 0em;
+      }
+      .cls-9 {
+        fill: #f2f2f2;
+      }
+      .cls-10 {
+        letter-spacing: 0em;
+      }
+      .cls-11 {
+        letter-spacing: -0.08em;
+      }
+    </style>
+  </defs>
+
+  <ellipse
+    class="cls-9"
+    cx="195.13"
+    cy="204.21"
+    rx="193.58"
+    ry="196.48"
+    transform="translate(-.79 .76) rotate(-.22)"
+  />
+  
+  <text
+    class="cls-3"
+    transform="translate(67.37 121.84) rotate(-47.48) scale(.65 1) skewX(-1.31)"
+  >
+    <tspan x="0" y="0">MO</tspan>
+  </text>
+
+  <text
+    class="cls-7"
+    transform="translate(184.81 45.25) rotate(5.05) scale(.64 1) skewX(.19)"
+    dx="-10"
+    dy="3"
+    style="font-size:45px;"
+  >
+    <tspan x="0" y="0">TUE</tspan>
+  </text>
+
+  <text
+    class="cls-5"
+    transform="translate(303.73 95.31) rotate(57.23) scale(.65 1) skewX(1.25)"
+  >
+    <tspan x="0" y="0">WE</tspan>
+  </text>
+
+  <text
+    class="cls-2"
+    transform="translate(348.73 217.52) rotate(107.16) scale(.66 1) skewX(-.77)"
+    style="font-size:45px;"
+  >
+    <tspan x="0" y="0">THU</tspan>
+  </text>
+
+  <text
+    class="cls-1"
+    style="font-weight:300;"
+    transform="translate(274.55 334.18) rotate(158.62) scale(0.7 1) skewX(-0.3)"
+  >
+    <tspan x="0" y="0">FRI</tspan>
+  </text>
+
+  <text
+    class="cls-4"
+    transform="translate(143.45 349.28) rotate(-148.45) scale(.64 1) skewX(1.12)"
+  >
+    <tspan class="cls-10" x="0" y="0">S</tspan>
+    <tspan class="cls-11" x="27.29" y="0">A</tspan>
+    <tspan class="cls-8" x="57.5" y="0">T</tspan>
+  </text>
+  <text
+    class="cls-6"
+    transform="translate(52.52 259.03) rotate(-97.62) scale(.66 1) skewX(.39)"
+  >
+    <tspan x="0" y="0">SUN</tspan>
+  </text>
+</svg>
+

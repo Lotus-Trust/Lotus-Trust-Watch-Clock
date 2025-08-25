@@ -1,0 +1,88 @@
+<!-- src/app/fondo-editor/fondo-editor.html -->
+<div class="fondo-editor">
+
+
+    <!-- Navegación Fondos -->
+    <div class="fondo-editor__botones-navegacion">
+        <button class="fondo-editor__boton" (click)="anterior()">Anterior</button>
+        <div class="fondo-editor__titulo">Fondo {{ indiceFondo + 1 }} / 12</div>
+        <button class="fondo-editor__boton" (click)="siguiente()">Siguiente</button>
+    </div>
+
+    <form class="fondo-editor__form">
+        <!-- Nombre -->
+        <div class="fondo-editor__campo">
+            <label class="fondo-editor__label">Nombre:</label>
+            <input class="fondo-editor__input" type="text" [(ngModel)]="fondo.nombre" name="nombre" />
+        </div>
+
+        <!-- Gestor -->
+        <div class="fondo-editor__campo">
+            <label class="fondo-editor__label">Gestor:</label>
+            <input class="fondo-editor__input" type="text" [(ngModel)]="fondo.gestor" name="gestor" />
+        </div>
+
+        <!-- Retorno Objetivo -->
+        <div class="fondo-editor__campo">
+            <label class="fondo-editor__label">Retorno Objetivo:</label>
+            <input class="fondo-editor__input" type="text" [(ngModel)]="fondo.retorno" name="retorno" />
+        </div>
+
+        <!-- Máx Pérdida -->
+        <div class="fondo-editor__campo">
+            <label class="fondo-editor__label">Máx Pérdida:</label>
+            <input class="fondo-editor__input" type="text" [(ngModel)]="fondo.perdidaMax" name="perdidaMax" />
+        </div>
+
+        <!-- Periodo de Inversión -->
+        <h2 class="fondo-editor__seccion-titulo">Periodo de Inversión</h2>
+
+        <div class="fondo-editor__campo">
+            <input class="fondo-editor__input" type="text" placeholder="Descripción o texto del periodo de inversión"
+                [(ngModel)]="fondo.descripcionPeriodo" name="descripcionPeriodo" />
+        </div>
+
+        <div class="fondo-editor__campo">
+            <label class="fondo-editor__label">Desde:</label>
+            <input class="fondo-editor__input" type="date" [(ngModel)]="fondo.fechaDesde" name="fechaDesde" />
+        </div>
+
+        <div class="fondo-editor__campo">
+            <label class="fondo-editor__label">Hasta:</label>
+            <input class="fondo-editor__input" type="date" [(ngModel)]="fondo.fechaHasta" name="fechaHasta" />
+        </div>
+
+        <!-- Ventana de Subscripción -->
+        <h2 class="fondo-editor__seccion-titulo">Ventana de Subscripción</h2>
+
+        <div class="fondo-editor__campo">
+            <label class="fondo-editor__label">Estado:</label>
+            <input class="fondo-editor__input" type="text" [(ngModel)]="fondo.estadoSubscripcion"
+                name="estadoSubscripcion" />
+        </div>
+
+        <div class="fondo-editor__campo">
+            <label class="fondo-editor__label">Desde el:</label>
+            <input class="fondo-editor__input" type="date" [(ngModel)]="fondo.fechaSubscripcionDesde"
+                name="fechaSubscripcionDesde" />
+        </div>
+
+        <div class="fondo-editor__campo">
+            <label class="fondo-editor__label">Hasta el:</label>
+            <input class="fondo-editor__input" type="date" [(ngModel)]="fondo.fechaSubscripcionHasta"
+                name="fechaSubscripcionHasta" />
+        </div>
+
+        <div class="fondo-editor__campo">
+            <label class="fondo-editor__label">Fund ID:</label>
+            <input class="fondo-editor__input" type="text" [(ngModel)]="fondo.fundId" name="fundId" />
+        </div>
+
+        <button class="fondo-editor__boton fondo-editor__boton-actualizar" type="button"
+            (click)="actualizar()">Actualizar</button>
+    </form>
+</div>
+
+
+
+

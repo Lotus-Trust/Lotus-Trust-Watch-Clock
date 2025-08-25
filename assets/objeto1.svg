@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 808 812">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.9;
+      }
+      .cls-2 {
+        fill: #f2f2f2;
+      }
+      .cls-3 {
+        fill: #283740;
+        font-family: Calibri, Calibri;
+        font-size: 61.65px;
+        stroke: #283740;
+      }
+    </style>
+  </defs>
+
+  <circle class="cls-2" cx="404" cy="406" r="400"/>
+  <circle class="cls-2" cx="404" cy="406" r="365"/>
+
+  <!-- Grupo rotatable con id para control de rotación -->
+  <g id="rotatableDias" class="cls-1">
+    <text class="cls-3" transform="translate(380.85 56.69) rotate(-.47) scale(.65 1)"><tspan x="0" y="0">01</tspan></text>
+    <text class="cls-3" transform="translate(451.71 59.14) rotate(11.09) scale(.65 1)"><tspan x="0" y="0">02</tspan></text>
+    <text class="cls-3" transform="translate(520.51 75.77) rotate(22.78) scale(.65 1)"><tspan x="0" y="0">03</tspan></text>
+    <text class="cls-3" transform="translate(584.59 106.04) rotate(34.42) scale(.65 1)"><tspan x="0" y="0">04</tspan></text>
+    <text class="cls-3" transform="translate(641.22 148.56) rotate(45.97) scale(.65 1)"><tspan x="0" y="0">05</tspan></text>
+    <text class="cls-3" transform="translate(688.2 201.55) rotate(57.53) scale(.65 1)"><tspan x="0" y="0">06</tspan></text>
+    <text class="cls-3" transform="translate(723.61 262.94) rotate(69.2) scale(.65 1)"><tspan x="0" y="0">07</tspan></text>
+    <text class="cls-3" transform="translate(745.84 330.16) rotate(80.88) scale(.65 1)"><tspan x="0" y="0">08</tspan></text>
+    <text class="cls-3" transform="translate(754.02 400.58) rotate(92.38) scale(.65 1)"><tspan x="0" y="0">09</tspan></text>
+    <text class="cls-3" transform="translate(530.69 732.45) rotate(162.13) scale(.65 1)"><tspan x="0" y="0">15</tspan></text>
+    <text class="cls-3" transform="translate(748.02 471.17) rotate(104.01) scale(.65 1)"><tspan x="0" y="0">10</tspan></text>
+    <text class="cls-3" transform="translate(391.65 755.85) rotate(-174.73) scale(.65 1)"><tspan x="0" y="0">17</tspan></text>
+    <text class="cls-3" transform="translate(321.49 746.3) rotate(-163.07) scale(.65 1)"><tspan x="0" y="0">18</tspan></text>
+    <text class="cls-3" transform="translate(254.7 722.73) rotate(-151.39) scale(.65 1)"><tspan x="0" y="0">19</tspan></text>
+    <text class="cls-3" transform="translate(194.02 686.12) rotate(-139.8) scale(.65 1)"><tspan x="0" y="0">20</tspan></text>
+    <text class="cls-3" transform="translate(727.9 539.07) rotate(115.7) scale(.65 1)"><tspan x="0" y="0">11</tspan></text>
+    <text class="cls-3" transform="translate(694.41 601.53) rotate(127.31) scale(.65 1)"><tspan x="0" y="0">12</tspan></text>
+    <text class="cls-3" transform="translate(141.95 638.12) rotate(-128.26) scale(.65 1)"><tspan x="0" y="0">21</tspan></text>
+    <text class="cls-3" transform="translate(649.09 655.95) rotate(138.86) scale(.65 1)"><tspan x="0" y="0">13</tspan></text>
+    <text class="cls-3" transform="translate(100.52 580.63) rotate(-116.64) scale(.65 1)"><tspan x="0" y="0">22</tspan></text>
+    <text class="cls-3" transform="translate(71.56 516) rotate(-104.95) scale(.65 1)"><tspan x="0" y="0">23</tspan></text>
+    <text class="cls-3" transform="translate(462.41 751.21) rotate(173.79) scale(.65 1)"><tspan x="0" y="0">16</tspan></text>
+    <text class="cls-3" transform="translate(593.77 700.23) rotate(150.44) scale(.65 1)"><tspan x="0" y="0">14</tspan></text>
+    <text class="cls-3" transform="translate(56.29 446.82) rotate(-93.33) scale(.65 1)"><tspan x="0" y="0">24</tspan></text>
+    <text class="cls-3" transform="translate(55.2 375.93) rotate(-81.83) scale(.65 1)"><tspan x="0" y="0">25</tspan></text>
+    <text class="cls-3" transform="translate(68.3 306.36) rotate(-70.14) scale(.65 1)"><tspan x="0" y="0">26</tspan></text>
+    <text class="cls-3" transform="translate(95.27 240.82) rotate(-58.48) scale(.65 1)"><tspan x="0" y="0">27</tspan></text>
+    <text class="cls-3" transform="translate(134.88 182.11) rotate(-46.91) scale(.65 1)"><tspan x="0" y="0">28</tspan></text>
+    <text class="cls-3" transform="translate(185.44 132.52) rotate(-35.36) scale(.65 1)"><tspan x="0" y="0">29</tspan></text>
+    <text class="cls-3" transform="translate(244.95 94.05) rotate(-23.72) scale(.65 1)"><tspan x="0" y="0">30</tspan></text>
+    <text class="cls-3" transform="translate(310.93 68.43) rotate(-12.03) scale(.65 1)"><tspan x="0" y="0">31</tspan></text>
+  </g>
+</svg>

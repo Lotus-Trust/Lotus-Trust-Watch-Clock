@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 412">
+  <defs>
+    <style>
+      .cls-1{letter-spacing:-.07em;}
+      .cls-2{letter-spacing:0em;}
+      .cls-3{letter-spacing:-.01em;}
+      .cls-4{fill:#f2f2f2;}
+      .cls-5{letter-spacing:-.02em;}
+      .cls-6{letter-spacing:-.02em;}
+      .cls-7{letter-spacing:-.01em;}
+      .cls-8{letter-spacing:0em;}
+      .cls-9{font-family:Calibri, Calibri;font-size:61.65px;}
+    </style>
+  </defs>
+
+  <ellipse class="cls-4" cx="205.78" cy="206.04" rx="201.3" ry="198.69" transform="translate(-85.42 205.85) rotate(-45)"/>
+  <ellipse class="cls-4" cx="205.78" cy="206.04" rx="166.9" ry="164.74" transform="translate(-85.42 206.27) rotate(-45.08)"/>
+
+  <!-- Agrupación de todos los textos -->
+  <g id="rotatableMeses">
+    <text class="cls-9" transform="translate(334.58 288.2) rotate(134.92) scale(.65 1)">
+      <tspan x="0" y="0">APR</tspan>
+    </text>
+    <text class="cls-9" transform="translate(279.77 340.95) rotate(164.5) scale(.65 1)">
+      <tspan x="0" y="0">M</tspan><tspan class="cls-1" x="52.71" y="0">A</tspan><tspan class="cls-2" x="83.86" y="0">Y</tspan>
+    </text>
+    <text class="cls-9" transform="translate(118.44 332.74) rotate(-135.08) scale(.65 1)">
+      <tspan x="0" y="0">JUL</tspan>
+    </text>
+    <text class="cls-9" transform="translate(69.48 281.42) rotate(-104.54) scale(.65 1)">
+      <tspan class="cls-5" x="0" y="0">A</tspan><tspan x="34.71" y="0">UG</tspan>
+    </text>
+    <text class="cls-9" transform="translate(53.13 196.32) rotate(-74.67) scale(.65 1)">
+      <tspan x="0" y="0">SEP</tspan>
+    </text>
+    <text class="cls-9" transform="translate(76.28 124.57) rotate(-45.08) scale(.65 1)">
+      <tspan x="0" y="0">O</tspan><tspan class="cls-8" x="40.82" y="0">C</tspan><tspan class="cls-2" x="73.99" y="0">T</tspan>
+    </text>
+    <text class="cls-9" transform="translate(197.47 359.64) rotate(-165.63) scale(.65 1)">
+      <tspan x="0" y="0">JUN</tspan>
+    </text>
+    <text class="cls-9" transform="translate(131.49 71.21) rotate(-15.5) scale(.65 1)">
+      <tspan x="0" y="0">N</tspan><tspan class="cls-3" x="39.79" y="0">O</tspan><tspan class="cls-2" x="79.86" y="0">V</tspan>
+    </text>
+    <text class="cls-9" transform="translate(213.72 52.35) rotate(14.37) scale(.65 1)">
+      <tspan x="0" y="0">D</tspan><tspan class="cls-7" x="37.93" y="0">E</tspan><tspan x="67.31" y="0">C</tspan>
+    </text>
+    <text class="cls-9" transform="translate(291.06 77.3) rotate(44.92) scale(.65 1)">
+      <tspan class="cls-6" x="0" y="0">J</tspan><tspan x="18.6" y="0">AN</tspan>
+    </text>
+    <text class="cls-9" transform="translate(343.8 137.32) rotate(75.46) scale(.65 1)">
+      <tspan x="0" y="0">FEB</tspan>
+    </text>
+    <text class="cls-9" transform="translate(361.13 205.88) rotate(105.33) scale(.65 1)">
+      <tspan x="0" y="0">MAR</tspan>
+    </text>
+  </g>
+</svg>
