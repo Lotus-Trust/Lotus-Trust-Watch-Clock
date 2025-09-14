@@ -32,9 +32,12 @@ html {
 
 
 #clock__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     @media (max-width: 768px) {
         display: flex;
-        flex-direction: column;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -621,6 +624,43 @@ body {
     }
 }
 
+#title-container {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #48535C;
+    margin-bottom: 10px;
+    transform: translateX(-4px) translateY(4px);
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
+}
+#title {
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+    color: #48535C;
+    margin-bottom: 6px;
+    display: block;
+}
+
+
+#subtitle {
+    font-size: 9px;
+    font-weight: 400;
+    color: #48535C;
+}
+
+#tribute {
+    text-align: center;
+    transform: translateX(-4px);
+    color: #48535C;
+    font-size: 9px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}   
+
 /* Cada fila usa flex para alinear etiquetas y inputs */
 .fila {
     display: flex;
@@ -751,6 +791,12 @@ input[readonly] {
     /* rojo intenso */
 }
 
+#handlers {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 /* Contenedor de botones extra debajo del cuadro de inversión */
 #botonesExtra {
     display: flex;
@@ -759,18 +805,15 @@ input[readonly] {
     margin-top: 20px;
     align-items: center;
     position: relative;
+    justify-content: between;
 
-    @media (min-width: 768px) {
-        flex-direction: column !important;
-    }
 }
 
 .btn-lujo {
-    @media (max-width: 768px) {
-        min-width: 80px !important;
-        position: relative !important;
-        left: 0 !important; 
-    }
+    min-width: 80px !important;
+    position: relative !important;
+    left: 0 !important; 
+        
 }
 
 /* Animación de flotación suave */
