@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Reloj Patek Digital - Base con Bisel, Botón y Esfera Ajustable</title>
     <link rel="stylesheet" href="styles.css" />
+    <meta name="robots" content="noindex, nofollow, nosnippet" />
+    <meta name="googlebot" content="noindex, nofollow, nosnippet" />
 </head>
 
 <body>
@@ -22,6 +24,10 @@
             </div>
     
             <div id="reloj-container">
+                <p id="title-container">
+                    <span id="title">LOTUS TRUST <br>ENGINE</span>
+                    <span id="subtitle">Where Function is Draped in Art</span>
+                </p>
                 <div id="container">
                     <div id="app">
                         <div id="base-circle"></div>
@@ -117,6 +123,9 @@
                         <div id="posAbsoluteEsfera">Coordenadas absolutas: (0, 0)</div>
                     </div>
                 </div>
+                <p id="tribute">
+                    Tribute to cope2 Bronx Graffiti Legend
+                </p>
             </div>
     
             <!-- Panel lateral con controles para los 8 objetos + objeto 10 -->
@@ -267,52 +276,54 @@
                 </div>
             </div>
         </div>
-    
-        <div id="cuadro-inversion">
-            <div class="fila">
-                <div class="fila titulo resumen">Summary / Resumen</div>
-                <input id="resumen" type="text" readonly value="">
-                <label for="gestionadoPor">Managed by / Gestionado por:</label>
-                <input id="gestionadoPor" type="text" readonly value="">
-                <label for="expReturn">Exp. Return / Retorno Objetivo:</label>
-                <input id="expReturn" type="text" readonly value="">
-                <label for="maxLoss">Max exp. Loss / Máx Pérdida:</label>
-                <input id="maxLoss" class="espaciado-inferior" type="text" readonly value="">
+        
+
+        <div id="handlers">
+            <div id="cuadro-inversion">
+                <div class="fila">
+                    <div class="fila titulo resumen">Summary / Resumen</div>
+                    <input id="resumen" type="text" readonly value="">
+                    <label for="gestionadoPor">Managed by / Gestionado por:</label>
+                    <input id="gestionadoPor" type="text" readonly value="">
+                    <label for="expReturn">Exp. Return / Retorno Objetivo:</label>
+                    <input id="expReturn" type="text" readonly value="">
+                    <label for="maxLoss">Max exp. Loss / Máx Pérdida:</label>
+                    <input id="maxLoss" class="espaciado-inferior" type="text" readonly value="">
+                </div>
+        
+                <div class="espaciador"></div>
+        
+                <div class="fila titulo">Investment Period</div>
+        
+                <div class="fila">
+                    <input id="blank1" type="text" readonly value="">
+                    <label for="fechaDesde">From / Desde el:</label>
+                    <input id="fechaDesde" type="date" readonly value="">
+                    <label for="fechaHasta">To / Hasta el:</label>
+                    <input id="fechaHasta" type="date" readonly value="">
+                </div>
+        
+                <div class="espaciador"></div>
+        
+                <div class="fila titulo">Subscription Window</div>
+        
+                <div class="fila">
+                    <label for="estadoSubscripcion">Status:</label>
+                    <input id="estadoSubscripcion" type="text" readonly value="">
+                    <label for="desdeSubscripcion">From / Desde el:</label>
+                    <input id="desdeSubscripcion" type="date" readonly value="">
+                    <label for="hastaSubscripcion">To / Hasta el:</label>
+                    <input id="hastaSubscripcion" type="date" readonly value="">
+                    <label for="fundID">Fund ID:</label>
+                    <input id="fundID" type="text" readonly value="">
+                </div>
             </div>
-    
-            <div class="espaciador"></div>
-    
-            <div class="fila titulo">Investment Period</div>
-    
-            <div class="fila">
-                <input id="blank1" type="text" readonly value="">
-                <label for="fechaDesde">From / Desde el:</label>
-                <input id="fechaDesde" type="date" readonly value="">
-                <label for="fechaHasta">To / Hasta el:</label>
-                <input id="fechaHasta" type="date" readonly value="">
+        
+            <div id="botonesExtra">
+                <button class="btn-lujo" id="btnInfo" disabled>Login</button>
+                <button class="btn-lujo" id="btnLogin" disabled>+ Info</button>
             </div>
-    
-            <div class="espaciador"></div>
-    
-            <div class="fila titulo">Subscription Window</div>
-    
-            <div class="fila">
-                <label for="estadoSubscripcion">Status:</label>
-                <input id="estadoSubscripcion" type="text" readonly value="">
-                <label for="desdeSubscripcion">From / Desde el:</label>
-                <input id="desdeSubscripcion" type="date" readonly value="">
-                <label for="hastaSubscripcion">To / Hasta el:</label>
-                <input id="hastaSubscripcion" type="date" readonly value="">
-                <label for="fundID">Fund ID:</label>
-                <input id="fundID" type="text" readonly value="">
             </div>
-        </div>
-    
-        <!-- NUEVOS BOTONES -->
-        <div id="botonesExtra">
-            <button class="btn-lujo" id="btnInfo" disabled>Login</button>
-            <button class="btn-lujo" id="btnLogin" disabled>+ Info</button>
-        </div>
         </div>
     </div>
 
