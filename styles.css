@@ -876,7 +876,14 @@ input[readonly] {
 
 
 
-
+.supported_by {
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 6px;
+    display: block;
+    color:#283640;
+    font-weight: bold;
+}
 
 
 
