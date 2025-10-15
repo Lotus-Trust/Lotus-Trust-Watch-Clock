@@ -19,14 +19,16 @@ html {
 
 /* Contenedor principal que contiene reloj y panel de controles */
 #main-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* cambio para centrar verticalmente */
-    gap: 15px;
-    padding: 10px;
-    @media (min-width: 768px) {
-            height: 100vh;
+        display: flex;
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+        @media (min-width: 768px) {
+            flex-direction: row;
+            align-items: center;
+            /* cambio para centrar verticalmente */
+            gap: 15px;
+            padding: 10px;
     }
 }
 
@@ -356,7 +358,11 @@ html {
 
 #side-buttons {
     @media (max-width: 768px) {
-        display: none !important;
+        width: auto !important;
+        display:flex !important;
+        flex-direction: row !important;
+        margin-top: 20px !important;
+        margin-bottom: 30px !important;
     }
 }
 #side-buttons {
@@ -578,7 +584,7 @@ body {
     font-family: "Calibri", Arial, sans-serif;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     /* Centra horizontal */
