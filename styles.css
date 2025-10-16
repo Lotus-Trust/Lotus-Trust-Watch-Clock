@@ -618,14 +618,14 @@ body {
     width: 180px;
     max-height: 165px;
     border-radius: 4px;
-    /* box-shadow: 0 8px 18px #a1fffc !important; */
+    box-shadow: 0 8px 18px #a1fffc !important;
     padding: 12px 12px;
     overflow: auto;
     box-sizing: border-box;
     color: #333;
     border: 0.3px solid #004d40;
     font-family: Calibri, sans-serif;
-    filter: drop-shadow(0 0 1px var(--shadow-color, #00aaff)) drop-shadow(0 0 3.5px var(--shadow-color, #00aaff));
+    /* filter: drop-shadow(0 0 1px var(--shadow-color, #00aaff)) drop-shadow(0 0 3.5px var(--shadow-color, #00aaff)); */
 
     /* Flotación animada */
     animation: flotar 4s ease-in-out infinite;
