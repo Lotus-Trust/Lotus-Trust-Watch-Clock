@@ -15,6 +15,10 @@ html {
     /* align-items: center; */
     background-color: #ffffff;
     font-family: Arial, sans-serif;
+
+    @media (max-width: 768px) {
+        overflow-y: hidden !important;
+    }
 }
 
 /* Contenedor principal que contiene reloj y panel de controles */
