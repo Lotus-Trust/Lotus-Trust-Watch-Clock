@@ -641,14 +641,11 @@ body {
     font-weight: 600;
     color: #48535C;
     margin-bottom: 10px;
-    transform: translateX(-5px) translateY(4px) translateY(14px);
+    transform: translateX(-4px) translateY(16px);
+    
     @media (max-width: 768px) {
         font-size: 12px;
         transform: translateX(-10px) translateY(14px);
-    }
-
-    @media (max-width: 1300px) {
-        transform: translateX(-4px) translateY(16px);
     }
 }
 #title {
@@ -671,13 +668,10 @@ body {
     font-weight: 400;
     margin-bottom: 10px;
     text-shadow: none;
+    transform: translateX(-4px);
 
     @media (max-width: 768px) {
         transform: translateX(-8px);
-    }
-
-    @media (max-width: 1300px) {
-        transform: translateX(-4px);
     }
 }   
 
