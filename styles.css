@@ -618,7 +618,7 @@ body {
     width: 180px;
     max-height: 165px;
     border-radius: 4px;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 18px #a1fffc !important;
     padding: 12px 12px;
     overflow: auto;
     box-sizing: border-box;
@@ -628,7 +628,6 @@ body {
 
     /* Flotación animada */
     animation: flotar 4s ease-in-out infinite;
-    filter: drop-shadow(0 0 1px var(--shadow-color, #00aaff)) drop-shadow(0 0 3.5px var(--shadow-color, #00aaff));
 
     @media (max-width: 768px) {
         margin: 50px 0 10px 0;
@@ -665,6 +664,7 @@ body {
     font-size: 9px;
     font-weight: 400;
     margin-bottom: 10px;
+    text-shadow: none;
 }   
 
 /* Cada fila usa flex para alinear etiquetas y inputs */
@@ -674,6 +674,8 @@ body {
     gap: 10px;
     margin-bottom: 5px;
     align-items: center;
+    max-width:100%;
+    box-sizing: border-box;
 }
 
 /* Etiquetas */
@@ -683,12 +685,15 @@ body {
     font-size: 10px;
     color: #283740;
     margin-bottom: -5px;
+    text-shadow: none;
 }
 
 /* Inputs */
 .fila input {
     flex: 1 0 150px;
+    max-width: 100%;
     padding: 3px 8px;
+    box-sizing: border-box;
     font-size: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
