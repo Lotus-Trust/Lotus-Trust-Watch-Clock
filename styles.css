@@ -624,11 +624,14 @@ body {
     color: #333;
     border: 0.3px solid #004d40;
     font-family: Calibri, sans-serif;
-    filter: drop-shadow(0 0 1px var(--shadow-color, #00aaff)) drop-shadow(0 0 3.5px var(--shadow-color, #00aaff));
 
     /* Flotación animada */
     animation: flotar 4s ease-in-out infinite;
 
+    @media (min-width: 1200px) {
+        filter: drop-shadow(0 0 1px var(--shadow-color, #00aaff)) drop-shadow(0 0 3.5px var(--shadow-color, #00aaff));
+
+    }
     @media (max-width: 768px) {
         box-shadow: 0 8px 18px #a1fffc !important;
         margin: 50px 0 10px 0;
