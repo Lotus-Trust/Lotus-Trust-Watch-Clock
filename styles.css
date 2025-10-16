@@ -26,6 +26,7 @@ html {
         display: flex;
         @media (max-width: 768px) {
             flex-direction: column;
+            padding: 0 10px;
         }
         @media (min-width: 768px) {
             flex-direction: row;
