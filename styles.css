@@ -628,13 +628,16 @@ body {
     /* Flotación animada */
     animation: flotar 4s ease-in-out infinite;
 
-    @media (min-width: 1200px) {
-        filter: drop-shadow(0 0 1px var(--shadow-color, #00aaff)) drop-shadow(0 0 3.5px var(--shadow-color, #00aaff));
-
-    }
+    
     @media (max-width: 768px) {
-        box-shadow: 0 8px 18px #a1fffc !important;
+        box-shadow: 0 4px 18px #00aaff !important;
         margin: 50px 0 10px 0;
+    }
+}
+
+#cuadro-inversion {
+    @media (min-width: 800px) {
+        filter: drop-shadow(0 0 1px var(--shadow-color, #00aaff)) drop-shadow(0 0 3.5px var(--shadow-color, #00aaff));
     }
 }
 
