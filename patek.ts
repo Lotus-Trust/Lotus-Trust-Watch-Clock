@@ -241,7 +241,9 @@ fixedPositions.numeros.forEach(({ elem, x, y }) => {
 
   // Variables estado rotaciones
   let rotationDegrees = 0;
-  let objeto1Rotation = 0;
+  const diaHoy = new Date().getDate(); // del 1 al 31
+  let objeto1Rotation = (diaHoy - 1) * (360 / 31); // calcula rotación exacta
+
   let objeto2Rotation = 0;
   let objeto3Rotation = 0;
   let objeto4Rotation = 0;
@@ -407,16 +409,39 @@ function actualizarColorSombra(color: string) {
   }
 }
 
+// Calcula la rotación del disco de días según el día seleccionado
+function calcularRotacionDia(dia: number) {
+    const totalDias = 31; // número de días en el disco
+    const gradosPorDia = 360 / totalDias;
+    return -((dia - 1) * gradosPorDia); // negativo si gira hacia la izquierda
+}
+
+  function calcularRotacionDia() {
+  const diaHoy = new Date().getDate(); // 1-31
+  return (diaHoy - 1) * (360 / 31);   // ajusta si tu disco tiene 31 posiciones
+  }
+  
+  function aplicarRotacionDia() {
+  const rotDias = getRotatableDias(); // tu función que obtiene el grupo del SVG
+  if (!rotDias) return;
+
+  const rotation = calcularRotacionDia();
+  rotDias.style.transformOrigin = '50% 50%';
+  rotDias.style.transition = 'transform 0.6s ease-in-out';
+  rotDias.style.transform = `rotate(${rotation}deg)`;
+}
 
 
   // Actualizar rotaciones objetos
   function actualizarRotacionObjeto1() {
-    const rotatable = getRotatableDias();
-    if (!rotatable) return;
-    rotatable.style.transformOrigin = '50% 50%';
-    rotatable.style.transition = 'transform 0.6s ease-in-out';
-    rotatable.style.transform = `rotate(${objeto1Rotation}deg)`;
-  }
+  const rotatable = getRotatableDias();
+  if (!rotatable) return;
+  rotatable.style.transformOrigin = '50% 50%';
+  rotatable.style.transition = 'transform 0.6s ease-in-out';
+  rotatable.style.transform = `rotate(${objeto1Rotation}deg)`;
+}
+
+
   function actualizarRotacionObjeto2() {
     const rotatable = getRotatableDias2();
     if (!rotatable) return;
@@ -676,22 +701,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
   // Función para forzar la opacidad de los objetos según el fondo seleccionado
+// Función para forzar la opacidad de los objetos según el fondo seleccionado
 function forzarOpacidades(nuevoIndex: number) {
-  // Lista de todos los objetos relevantes
+  // Lista de todos los objetos relevantes (incluye objeto8)
   const todosObjetos = [
     objeto7, objeto8, objeto9, objeto10, objeto11, objeto12, objeto13,
     objeto14, objeto15, objeto16, objeto17, objeto18, objeto19
   ];
 
+  // Mapear índice de fondosObjetos (sin objeto8) a todosObjetos (con objeto8)
+  const idxTodos = (nuevoIndex === 0) ? 0 : nuevoIndex + 1;
+
   todosObjetos.forEach((obj, i) => {
-    // Ajusta el mapping según corresponda
-    if (i === nuevoIndex + 1) { // Ejemplo: objeto10 para fondo3
-      obj.style.opacity = "1";
-    } else {
-      obj.style.opacity = "0";
-    }
+    obj.style.opacity = (i === idxTodos) ? "1" : "0";
   });
 }
+
 
 
 btn1.addEventListener('click', () => {
@@ -717,10 +742,11 @@ btn1.addEventListener('click', () => {
     } else {
       // Estado final
       currentFundIndex = nuevoIndex;
-      actualizarOpacidadFondos(nuevoIndex);      // Actualiza opacidades normales
+      actualizarOpacidadFondos(nuevoIndex);
       actualizarCuadroInversion(nuevoIndex);
       objeto4Rotation -= degreesPerStepObj4;
       actualizarRotacionObjeto4();
+
 
       const fondoActual = ciudades[nuevoIndex];
       window.dispatchEvent(new CustomEvent("fondoCambiado", { detail: { fondo: fondoActual } }));
@@ -1164,7 +1190,7 @@ function actualizarFecha() {
   const offsetXMes = 0;
   const offsetYMes = 0;
 
-  const offsetDias = 1 + offsetXDia;  // Puedes ir cambiando 0 a 6
+  const offsetDias = 1.875 + offsetXDia;  // Puedes ir cambiando 0 a 6
   const offsetSemana = 1 + offsetXSemana; 
   const offsetMes = 0 + offsetXMes; // (usamos solo para consistencia, si necesitas luego se agrega)
 
@@ -1216,12 +1242,61 @@ function actualizarFecha() {
   
 
 
-  // Inicializar rotaciones y posiciones
+// ===========================
+// Inicializar rotaciones y posiciones de manera segura
+// ===========================
+function inicializarRotaciones() {
   actualizarTransformEsfera();
-  actualizarRotacionObjeto1();
-  actualizarRotacionObjeto2();
-  actualizarRotacionObjeto3();
+
+  // Esperar a que los discos existan y tengan dimensiones
+  const rotDias = getRotatableDias();
+  const rotDias2 = getRotatableDias2();
+  const rotMeses = getRotatableMeses();
+
+// Función para asegurar que el primer disco tenga tamaño
+const centrarDia = () => {
+  if (rotDias) {
+    const bbox = rotDias.getBBox();
+    if (bbox.width && bbox.height) {
+      // Ahora sí podemos centrar el día
+      rotDias.style.transformOrigin = '50% 50%';
+      rotDias.style.transition = 'transform 0.6s ease-in-out';
+      // Usa la rotación ya calculada al cargar
+      rotDias.style.transform = `rotate(${objeto1Rotation}deg)`;
+    } else {
+      // Reintentar en el siguiente frame si aún no tiene tamaño
+      requestAnimationFrame(centrarDia);
+    }
+  }
+};
+requestAnimationFrame(centrarDia);
+
+
+  // Para los demás discos no es crítico esperar dimensiones, pero se asegura consistencia
+  if (rotDias2) actualizarRotacionObjeto2();
+  if (rotMeses) actualizarRotacionObjeto3();
   actualizarRotacionObjeto4();
+
+  // Posicionar objetos fijos y manecillas
+  fixedPositions.objetos.forEach(({ elem, x, y }) => {
+    posicionarElemento(elem, x, y, x - centerX, y - centerY);
+  });
+  fixedPositions.manecillas.forEach(({ elem, x, y }) => {
+    posicionarElemento(elem, x, y, x - centerX, y - centerY);
+  });
+
+  posicionarElemento(cristal, fixedPositions.cristal.x, fixedPositions.cristal.y,
+                     fixedPositions.cristal.x - centerX, fixedPositions.cristal.y - centerY);
+
+  cristal.style.transform = 'translate(-50%, -50%)';
+  cristal.style.pointerEvents = 'none';
+  cristal.style.position = 'absolute';
+  cristal.style.zIndex = '999';
+}
+
+// ✅ Ejecutar inicialización
+inicializarRotaciones();
+
 
   fixedPositions.objetos.forEach(({ elem, x, y }) => {
     posicionarElemento(elem, x, y, x - centerX, y - centerY);
@@ -1265,11 +1340,7 @@ function actualizarFecha() {
   
   actualizarCuadroInversion(currentFundIndex);
 
-  
 
-  
-
-  
 
 });
 
