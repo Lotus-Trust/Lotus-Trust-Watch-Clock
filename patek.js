@@ -990,7 +990,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         actualizarManecillas();
         animarAlma();
-        // actualizarFecha();
+        actualizarFecha();
         // Activar rotación automática de objeto5 al inicio
         animacionActivaObjeto5 = true;
         animarRotacionContinuaObjeto5();
