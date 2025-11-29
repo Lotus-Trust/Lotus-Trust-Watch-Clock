@@ -1233,12 +1233,14 @@ function actualizarFecha() {
   setTimeout(actualizarFecha, siguienteTimeout);
 }
 
-  actualizarManecillas();
-  animarAlma();
-  actualizarFecha();
-  // Activar rotación automática de objeto5 al inicio
-  animacionActivaObjeto5 = true;
-  animarRotacionContinuaObjeto5();
+actualizarManecillas();
+animarAlma();
+actualizarFecha();        // 1) Fija la fecha real primero
+inicializarRotaciones();   // 2) Inicializa rotaciones sin usar objeto1Rotation inicial
+// Activar rotación continua de objeto5
+animacionActivaObjeto5 = true;
+animarRotacionContinuaObjeto5();
+
   
 
 
@@ -1262,7 +1264,8 @@ const centrarDia = () => {
       rotDias.style.transformOrigin = '50% 50%';
       rotDias.style.transition = 'transform 0.6s ease-in-out';
       // Usa la rotación ya calculada al cargar
-      rotDias.style.transform = `rotate(${objeto1Rotation}deg)`;
+      //rotDias.style.transform = `rotate(${objeto1Rotation}deg)`;
+      // Será reemplazado por actualizarFecha() inmediatamente
     } else {
       // Reintentar en el siguiente frame si aún no tiene tamaño
       requestAnimationFrame(centrarDia);
