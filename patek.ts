@@ -1190,7 +1190,7 @@ function actualizarFecha() {
   const offsetXMes = 0;
   const offsetYMes = 0;
 
-  const offsetDias = 1.93 + offsetXDia;  // Puedes ir cambiando 0 a 6
+  const offsetDias = 2.03 + offsetXDia;  // Puedes ir cambiando 0 a 6
   const offsetSemana = 1 + offsetXSemana; 
   const offsetMes = 0 + offsetXMes; // (usamos solo para consistencia, si necesitas luego se agrega)
 
