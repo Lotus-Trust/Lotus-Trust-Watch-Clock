@@ -66,6 +66,14 @@ window.addEventListener('DOMContentLoaded', () => {
     // Referencias a los nuevos botones
     const btnInfo = document.getElementById('btnInfo');
     const btnLogin = document.getElementById('btnLogin');
+    // COPYFIX-002 — External Login and internal About navigation
+    btnInfo.addEventListener('click', () => {
+        window.open('https://www.clientam.com/sso/Login?partnerID=LOTUSTR', '_blank', 'noopener,noreferrer');
+    });
+
+    btnLogin.addEventListener('click', () => {
+        window.top.location.href = 'https://thelotustrust.com/about/';
+    });
     // Botón externo adicional (opcional)
     const boton1Externo = document.getElementById('boton1');
     // Agregar esta función justo después de declarar constantes principales (antes de las funciones de actualización)
