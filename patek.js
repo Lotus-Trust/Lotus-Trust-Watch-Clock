@@ -1,3 +1,4 @@
+"use strict";
 window.addEventListener('DOMContentLoaded', () => {
     // --- ELEMENTOS PRINCIPALES ---
     const boton = document.getElementById('boton-rotar');
@@ -70,7 +71,6 @@ window.addEventListener('DOMContentLoaded', () => {
     btnInfo.addEventListener('click', () => {
         window.open('https://www.clientam.com/sso/Login?partnerID=LOTUSTR', '_blank', 'noopener,noreferrer');
     });
-
     btnLogin.addEventListener('click', () => {
         window.top.location.href = 'https://thelotustrust.com/about/';
     });
@@ -961,10 +961,11 @@ window.addEventListener('DOMContentLoaded', () => {
             const offsetYSemana = 0;
             const offsetXMes = 0;
             const offsetYMes = 0;
-            const offsetDias = 1 + offsetXDia; // Puedes ir cambiando 0 a 6
+            const offsetDias = 1.1 + offsetXDia; // Puedes ir cambiando 0 a 6
             const offsetSemana = 1 + offsetXSemana;
             const offsetMes = 0 + offsetXMes; // (usamos solo para consistencia, si necesitas luego se agrega)
             const diaMesIndex = (diaMes - offsetDias + totalDiasMes) % totalDiasMes;
+            8;
             const diaSemanaIndex = (diaSemana - offsetSemana + 7) % 7;
             if (rotatableDias) {
                 const objeto1Rotation = -(diaMesIndex * 360) / totalDiasMes + offsetYDia;
